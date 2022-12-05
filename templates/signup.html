@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>singup</title>
+    <style>
+        .frm{
+            border: 3px solid black;
+            border-radius: 15px;
+            width: 300px;
+            height: 400px;
+            padding-top: 20px;
+            padding-left: 80px;
+            margin-left: 390px;
+            margin-top: 6%;
+            background-color: aliceblue;
+        }
+        .heading{
+            padding-left: 30px;
+            font-size: 240%;
+        }
+        .f1{
+            padding: 2%;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        .s1{
+            border: 2px solid black ;
+            border-radius: 5px;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body style="background-color: lightgrey;">
+    
+    <form action="" method="post" class="frm">
+        <h1 class="heading">  singup </h1>
+
+        <!-- {% comment %}  {% endcomment %} -->
+        {% for message in messages %}
+            <h3>{{message}}<h3/>
+        {% endfor %}
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="uname" required class="f1"><br><br>
+        <input type="email" placeholder="email" name="email" required class="f1"><br><br>
+        <input type="password" placeholder="passwaord" name="pass1" required class="f1"><br><br>
+        <input type="password" placeholder="confirm passwaord" name="pass2" required class="f1"><br><br>
+
+        <input type="submit" value="singup" name="submit" class="s1" >
+
+        <p>Already Have an account? <a href="login/">click here</a></p>
+
+    </form>
+    
+</body>
+</html>

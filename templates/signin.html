@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <style>
+        .f1{
+            border: 3px solid black;
+            border-radius: 14px;
+            width: 250px;
+            height: 250px;
+            padding: 4%;
+            margin-left: 450px;
+            margin-top: 5%;
+            background-color: antiquewhite;
+            /* padding-toppa: 3%; */
+
+        }
+        .f4{
+            padding-left: 50px;
+        }
+        .f2{
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 3%;
+        }
+        .f3{
+            border: 2px solid black;
+            border-radius: 4px;
+            padding: 3%;
+        }
+    </style>
+</head>
+<body style="background-color:whitesmoke;">
+    <form action="" method="post"  class="f1">
+        <h1 class="f4"> login </h1>
+
+        {% for message in messages %}
+            <h3>{{message}}<h3/>
+        {% endfor %}
+        {% csrf_token %}
+        <input type="text" placeholder="username" name="uname" required  class="f2"><br><br>
+        
+        <input type="password" placeholder="passwaord" name="pass1" required class="f2"><br><br>
+
+        <input type="submit" value="login" name="login"  class="f3">
+        <br><br>
+        <p>Don't have an account? <a href="{% url 'user_signup' %}"">click here</a></p>
+
+    </form>
+    
+</body>
+</html>
